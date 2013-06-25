@@ -16,6 +16,7 @@ function createTable() {
     var table = document.createElement('table');
     var baseRow = document.createElement('tr');
     var baseCell = document.createElement('td');
+	baseCell.className = "squarecell";
     var container = document.getElementById('container');
 
     for (var i = 0; i < 10; i++) {
@@ -45,9 +46,10 @@ function createTable() {
     container.appendChild(table);
     var tds = document.getElementsByTagName('td');
 
+	/* remove so we can just have .squarecell CSS rule.
     for (var i = 0; i < tds.length; i++)
         tds[i].style.width = '2px';
-
+	*/
 }
 function clear() {
     document.getElementById("container").innerHTML = "";

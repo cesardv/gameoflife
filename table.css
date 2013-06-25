@@ -1,0 +1,8 @@
+/*
+This file controls the CSS look and formatting of the table in the 'container' div
+*/
+
+.squarecell {
+	width: 22px;
+	height: 22px;
+}
