@@ -55,3 +55,6 @@ function clear() {
 function randomize() {
     createTable();
 }
+function next(){
+    
+}
