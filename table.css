@@ -1,0 +1,16 @@
+/* 
+    Document   : table
+    Created on : Jun 25, 2013, 8:57:20 PM
+    Author     : Vu
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.squarecell {
+	width: 22px;
+	height: 22px;
+}
