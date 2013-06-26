@@ -12,10 +12,12 @@ function createTable() {
     // rl is row length, cl is column length
     var rl = document.forms.game.row.value;
     var cl = document.forms.game.col.value;
+    // reset the population and generation
     pop = 0;
     gen = 0;
+    // clear the form
     document.getElementById("container").innerHTML = "";
-    // t is current array
+    // t is current array with random values of 1 and 0
     t = new Array(rl);
     for (var i = 0; i < rl; i++) {
         t[i] = new Array(cl);
@@ -25,23 +27,26 @@ function createTable() {
             t[i][j] = Math.floor(Math.random() * 2);
         }
     }
+    //create html labels
     var table = document.createElement('table');
     var baseRow = document.createElement('tr');
     var baseCell = document.createElement('td');
+    //change the size of the cells based on squarecell class in css
     baseCell.className = "squarecell";
+    // container is the form
     var container = document.getElementById('container');
-
+    // iterate through current array
     for (var i = 0; i < rl; i++) {
         //Create a new row
         var myRow = baseRow.cloneNode(false);
         for (var j = 0; j < cl; j++) {
             //Create a new cell, you could loop this for multiple cells
             var myCell = baseCell.cloneNode(false);
+            //set the value of the cell to be the value of the array
             myCell.innerHTML = t[i][j];
-//            myCell.style.width="2px";
-//            myCell.style.height="2px";
             //Append new cell
             myRow.appendChild(myCell);
+            // if cell value is 1, background is black, else white
             if (t[i][j] == 1){
                 myCell.style.backgroundColor = "black";
                 pop++;
@@ -56,32 +61,44 @@ function createTable() {
         //Append new row
         table.appendChild(myRow);
     }
+    // update the generation
     gen++;
+    // update the form to draw the table
     container.appendChild(table);
+    // change the text in the label
     popm = "Population: " + pop + "; Generation: " + gen;
-    document.forms.game.lives.value = popm;
+    document.getElementById("lives").innerHTML = popm; 
 }
+// start the increment automatically by calling next() constantly
 function start() {
     if(time) return;
     time = setInterval(next, 1000);
     next();
 }
+// stop the increments
 function stop(){
     clearInterval(time);
     time=null;
 }
+// calls the first function and reset the generation
 function reset() {
     createTable();
     gen = 0;
 }
 function next(){
-
+    // rl is row length user typed in text box
     var rl = document.forms.game.row.value;
+    // cl is column length user typed in text box
     var cl = document.forms.game.col.value;
+    // reset population to be zero
     pop = 0;
+    // update generation
     gen++;
+    // clear the form
     document.getElementById("container").innerHTML = "";
+    // alive_count is for number of alive cells
     var alive_count;
+    //initialize new array
     var n = new Array(rl);
     for (var i = 0; i < rl; i++) {
         n[i] = new Array(cl);
@@ -91,6 +108,7 @@ function next(){
             n[i][j] = 0;
         }
     }
+    //determine the contents of new array
     for(var i = 0; i < rl; i++){
         for(var j = 0; j < cl; j++){
             alive_count = 0;
@@ -132,13 +150,15 @@ function next(){
         }
         
     }
-    
+    //create html labels
     var table = document.createElement('table');
     var baseRow = document.createElement('tr');
     var baseCell = document.createElement('td');
+    //change the size of the cells based on squarecell class in css
     baseCell.className = "squarecell";
+    //container is the form
     var container = document.getElementById('container');
-
+    //iterate through the new array 
     for (var i = 0; i < rl; i++) {
         //Create a new row
         var myRow = baseRow.cloneNode(false);
@@ -149,6 +169,7 @@ function next(){
 
             //Append new cell
             myRow.appendChild(myCell);
+            // if cell value is 1, background is black, else white
             if (n[i][j] == 1){
                 myCell.style.backgroundColor = "black";
                 pop++;
@@ -163,16 +184,19 @@ function next(){
         //Append new row
         table.appendChild(myRow);
     }
-
+    // update the form to draw the table
     container.appendChild(table);
+    // update the current array with the new array
     for (var i = 0; i < rl; i++) {
         for (var j = 0; j < cl; j++) {
             t[i][j] = n[i][j];
         }
     }
+    // change the text in the label
     popm = "Population: " + pop + "; Generation: " + gen;
-    document.forms.game.lives.value = popm;
+    document.getElementById("lives").innerHTML = popm; 
 }
+// this is for mouse clicks
 function change(){
 
 }
