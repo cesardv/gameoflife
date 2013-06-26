@@ -8,6 +8,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body onload="createTable();">
+        <FORM onSubmit="" NAME="game">
+             <INPUT TYPE="text" NAME="lives" SIZE="31" MAXLENGTH="40" VALUE="Population: 0; Generation: 0">
+             <br />
+             <INPUT TYPE="text" NAME="collabel" SIZE="10" MAXLENGTH="10" VALUE="Table width: ">
+             <INPUT TYPE="text" NAME="col" SIZE="3" MAXLENGTH="3" VALUE="10">
+             <INPUT TYPE="text" NAME="rowlabel" SIZE="10" MAXLENGTH="10" VALUE="Table Height: ">
+             <INPUT TYPE="text" NAME="row" SIZE="3" MAXLENGTH="3" VALUE="10">
+        </FORM>
         <div id="container">
             
         </div>
@@ -23,8 +31,5 @@
         <button onclick="stop();">
             Stop
         </button>
-        <FORM onSubmit="" NAME="game">
-             <INPUT TYPE="text" NAME="lives" SIZE="31" MAXLENGTH="40" VALUE="Total Population is ">
-        </FORM>
     </body>
 </html>
