@@ -1,7 +1,13 @@
 // t is current array
     var t;
+    // time is timerID
     var time;
+    // pop is current population
+    var pop = 0;
+    //popm string for population
+    var popm = "Population: " + pop;
 function createTable() {
+    pop = 0;
     document.getElementById("container").innerHTML = "";
     // t is current array
     t = new Array(10);
@@ -30,8 +36,10 @@ function createTable() {
 //            myCell.style.height="2px";
             //Append new cell
             myRow.appendChild(myCell);
-            if (t[i][j] == 1)
+            if (t[i][j] == 1){
                 myCell.style.backgroundColor = "black";
+                pop++;
+            }
             else {
                 myCell.style.backgroundColor = "white";
                 myCell.style.color = "white";
@@ -44,6 +52,8 @@ function createTable() {
     }
 
     container.appendChild(table);
+    popm = "Population: " + pop;
+    document.forms.game.lives.value = popm;
 }
 function start() {
     if(time) return;
@@ -54,10 +64,11 @@ function stop(){
     clearInterval(time);
     time=null;
 }
-function randomize() {
+function reset() {
     createTable();
 }
 function next(){
+    pop = 0;
     document.getElementById("container").innerHTML = "";
     var alive_count;
     var n = new Array(10);
@@ -126,8 +137,10 @@ function next(){
 
             //Append new cell
             myRow.appendChild(myCell);
-            if (n[i][j] == 1)
+            if (n[i][j] == 1){
                 myCell.style.backgroundColor = "black";
+                pop++;
+            }
             else {
                 myCell.style.backgroundColor = "white";
                 myCell.style.color = "white";
@@ -145,4 +158,6 @@ function next(){
             t[i][j] = n[i][j];
         }
     }
+    popm = "Population: " + pop;
+    document.forms.game.lives.value = popm;
 }
