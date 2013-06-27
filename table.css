@@ -21,7 +21,8 @@ root {
     border-spacing: 1;
 /*    border-collapse: collapse;*/
 }
-/*th:first-child {
+/*
+th:first-child {
     -moz-border-radius: 6px 0 0 0;
     -webkit-border-radius: 6px 0 0 0;
     border-radius: 6px 0 0 0;
@@ -37,7 +38,9 @@ th:only-child{
     -moz-border-radius: 6px 6px 0 0;
     -webkit-border-radius: 6px 6px 0 0;
     border-radius: 6px 6px 0 0;
-}*/
+}
+
+*/
 body{
     background-image: url('whiteg.gif');
     margin:50px 0px; padding:0px; /* Need to set body margin and padding to get consistency between browsers. */
