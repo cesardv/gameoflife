@@ -1,13 +1,10 @@
 /* 
     Document   : table
-<<<<<<< HEAD
-    Created on : Jun 25, 2013, 8:57:20 PM
-=======
     Created on : Jun 25, 2013, 2:32:23 PM
->>>>>>> added generation label and dynamic size
+
     Author     : Vu
     Description:
-        Purpose of the stylesheet follows.
+        change the format of the index.html
 */
 
 root { 
@@ -15,6 +12,65 @@ root {
 }
 
 .squarecell {
-	width: 22px;
-	height: 22px;
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+}
+.mytable{
+    background-color:gray;
+    border-spacing: 1;
+/*    border-collapse: collapse;*/
+}
+/*th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}*/
+body{
+    background-image: url('whiteg.gif');
+    margin:50px 0px; padding:0px; /* Need to set body margin and padding to get consistency between browsers. */
+    text-align:center; /* Hack for IE5/Win */
+}
+#container{
+    width:500px;
+    margin:0px auto; /* Right and left margin widths set to "auto" */
+    text-align:left; /* Counteract to IE5/Win Hack */
+    padding:15px;
+    /*    border:1px dashed #333;*/
+}
+.bb{
+/*    background-color: #2daebf;*/
+    background-color: #007d9a;
+/*    background: #222 url(/images/alert-overlay.png) repeat-x;*/
+    display: inline-block;
+    padding: 8px 14px 9px;
+    color: #fff;
+/*    color: #858e98;*/
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    position: relative;
+    cursor: pointer;
+}
+.bb:hover{
+    color:#555;
 }

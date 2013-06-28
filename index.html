@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game of Life</title>
+        <script src="gl.js">
+        </script>
+        <link rel="stylesheet" href="table.css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body onload="createTable();">
+        <FORM onSubmit="" NAME="game">
+            <label id="lives" style="font-size: 25pt; font-weight: bold; color: #AA0114; text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;">Population: 0; Generation: 0</label>
+            <br />
+            <label id="collabel" style="font-size: 15pt; color: #0A0364; font-family: Arial">Table width:</label>
+            <INPUT TYPE="text" NAME="col" SIZE="3" MAXLENGTH="3" VALUE="50">
+            <label id="rowlabel" style="font-size: 15pt; color: #0A0364; font-family: Arial"> Table height:</label>
+            <INPUT TYPE="text" NAME="row" SIZE="3" MAXLENGTH="3" VALUE="40">
+        </FORM>
+
+        <div id="container">
+
+        </div>
+        <button class="bb" onclick="reset();">
+            Reset
+        </button>
+        <button class ="bb" onclick="next();">
+            Gen+1
+        </button>
+        <button class ="bb" onclick="next23();">
+            Gen+23
+        </button>
+        <button class ="bb" onclick="start();">
+            Start
+        </button>
+        <button class ="bb" onclick="stop();">
+            Stop
+        </button>
+    </body>
+</html>
