@@ -82,7 +82,7 @@ function createTable() {
 // start the increment automatically by calling next() constantly
 function start() {
     if(time) return;
-    time = setInterval(next, 500);
+    time = setInterval(next, 2000);
     next();
 }
 // stop the increments

@@ -41,6 +41,7 @@ th:only-child{
 }
 
 */
+
 body{
     background-image: url('whiteg.gif');
     margin:50px 0px; padding:0px; /* Need to set body margin and padding to get consistency between browsers. */
@@ -53,6 +54,7 @@ body{
     padding:15px;
     /*    border:1px dashed #333;*/
 }
+
 .bb{
 /*    background-color: #2daebf;*/
     background-color: #007d9a;
@@ -77,3 +79,4 @@ body{
 .bb:hover{
     color:#555;
 }
+
