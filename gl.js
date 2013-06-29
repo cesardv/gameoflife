@@ -7,7 +7,7 @@
     // gen is current generation
     var gen = 0;
     //popm string for population and generation
-    var popm = "Population: " + pop + "; Generation: " + gen;
+    var popm = "Population: " + pop + " Generation: " + gen;
 function createTable() {
     // rl is row length, cl is column length
     var rl = document.forms.game.row.value;
@@ -75,7 +75,7 @@ function createTable() {
     container.appendChild(table);
 
     // change the text in the label
-    popm = "Population: " + pop + "; Generation: " + gen;
+    popm = "Population: " + pop + " Generation: " + gen;
     document.getElementById("lives").innerHTML = popm; 
 
 }
@@ -216,7 +216,7 @@ function next23(){
     // update the form to draw the table
     container.appendChild(table);
     // change the text in the label
-    popm = "Population: " + pop + "; Generation: " + gen;
+    popm = "Population: " + pop + " Generation: " + gen;
     document.getElementById("lives").innerHTML = popm; 
 }
 function next(){
