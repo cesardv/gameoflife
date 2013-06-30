@@ -50,7 +50,7 @@ function createTable() {
             //set the value of the cell to be the value of the array
             myCell.innerHTML = t[i][j];
             //add click event
-            
+            myCell.onclick = "toggleCellDeadOrAlive(" + i + "," + j + ")";
             //Append new cell
             myRow.appendChild(myCell);
             // if cell value is 1, background is black, else white
@@ -332,10 +332,16 @@ function next(){
         }
     }
     // change the text in the label
-    popm = "Population: " + pop + "; Generation: " + gen;
+    popm = "Population: " + pop + " Generation: " + gen;
     document.getElementById("lives").innerHTML = popm; 
 }
 // this is for mouse clicks
-function change(){
-
+function toggleCellDeadOrAlive(x, y) {
+    var cellvalue = t[x][ y];
+    if (cellvalue == 1) {
+        t[x][y] = 0;
+    }
+    else {
+        t[x][y] = 1;
+    }
 }
