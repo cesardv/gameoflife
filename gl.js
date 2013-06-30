@@ -50,7 +50,7 @@ function createTable() {
             //set the value of the cell to be the value of the array
             myCell.innerHTML = t[i][j];
             //add click event
-            myCell.onclick = "toggleCellDeadOrAlive(" + i + "," + j + ")";
+            myCell.setAttribute("onclick", "toggleCellDeadOrAlive(this,"+i+","+j+")");
             //Append new cell
             myRow.appendChild(myCell);
             // if cell value is 1, background is black, else white
@@ -336,12 +336,16 @@ function next(){
     document.getElementById("lives").innerHTML = popm; 
 }
 // this is for mouse clicks
-function toggleCellDeadOrAlive(x, y) {
+function toggleCellDeadOrAlive(td, x, y) {
     var cellvalue = t[x][ y];
     if (cellvalue == 1) {
-        t[x][y] = 0;
+        t[x][y] = 0; /*t is global state array */
+        td.style.backgroundColor = "grey";
+        td.style.color = "grey";
     }
     else {
         t[x][y] = 1;
+        td.style.backgroundColor = "blue";
+        td.style.color = "blue";
     }
 }
