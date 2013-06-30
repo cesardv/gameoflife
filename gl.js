@@ -108,7 +108,7 @@ function next23(){
     document.getElementById("container").innerHTML = "";
     // alive_count is for number of alive cells
     var alive_count;
-    for (var i = 0; i < 23; i++) {
+    for (var y = 0; y < 23; y++) {
         //create new temp array
         var n = new Array(rl);
         for (var i = 0; i < rl; i++) {
