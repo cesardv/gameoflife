@@ -8,23 +8,31 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body onload="createTable();">
+        <FORM onSubmit="" NAME="game">
+            <label id="lives" >Population: 0 Generation: 0</label>
+             <br />
+             <label id="collabel" style="font-size: 15pt; color: #0A0364; font-family: Arial">Table width:</label>
+             <INPUT TYPE="text" NAME="col" SIZE="3" MAXLENGTH="3" VALUE="10">
+             <label id="rowlabel" style="font-size: 15pt; color: #0A0364; font-family: Arial"> Table height:</label>
+             <INPUT TYPE="text" NAME="row" SIZE="3" MAXLENGTH="3" VALUE="10">
+        </FORM>
         <div id="container">
             
         </div>
-        <button onclick="reset();">
+        <button class="bb" onclick="reset();">
             Reset
         </button>
-        <button onclick="next();">
-            Next Generation
+        <button class="bb" onclick="next();">
+            Gen+1
         </button>
-        <button onclick="start();">
+        <button class="bb" onclick="next23();">
+            Gen+23
+        </button>
+        <button class ="bb" onclick="start();">
             Start
         </button>
-        <button onclick="stop();">
+        <button class ="bb" onclick="stop();">
             Stop
         </button>
-        <FORM onSubmit="" NAME="game">
-             <INPUT TYPE="text" NAME="lives" SIZE="31" MAXLENGTH="40" VALUE="Total Population is ">
-        </FORM>
     </body>
 </html>
