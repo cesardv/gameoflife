@@ -20,6 +20,7 @@ root {
     background-color:gray;
     border-spacing: 1px;
 /*    border-collapse: collapse;*/
+	margin: 10px auto;
 }
 /*
 th:first-child {
@@ -43,14 +44,16 @@ th:only-child{
 */
 
 body{
-    /*    background-image: url('whiteg.gif');*/
     margin:50px 0px; padding:0px; /* Need to set body margin and padding to get consistency between browsers. */
     text-align:center; /* Hack for IE5/Win */
-    overflow-y: scroll;
+    overflow: hidden;
+	background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 60%);
+    background: -linear-gradient(top, #c9dbe9 0%, #fff 60%);
+    background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 60%);
 }
 #container{
     width:500px;
-    margin:0px auto; /* Right and left margin widths set to "auto" */
+    margin: 10px auto; /* Right and left margin widths set to "auto" */
     text-align: center; /* Counteract to IE5/Win Hack */
     padding:15px;
     /*    border:1px dashed #333;*/
@@ -78,7 +81,7 @@ body{
     cursor: pointer;
 }
 #clouds{
-    padding: 100px 0;
+    padding: 10px 0;
     background: #c9dbe9;
     background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
     background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
@@ -86,9 +89,9 @@ body{
     z-index: -1;
 }
 .cloud{
-    width: 200px; height: 15px;
+    width: 200px; height: 50px;
     background: #fff;
-    border-radius: 200px;
+    border-radius: 350px;
     -moz-border-radius: 200px;
     -webkit-border-radius: 200px;
     position: relative;
@@ -99,7 +102,7 @@ body{
     background: #fff;
     width: 100px; height: 80px;
     border: 1px solid white;
-    position: absolute; top: -15px;left: 10px;
+    position: absolute; top: -15px;left: 6px;
     border-radius: 100px;
     -moz-border-radius: 100px;
     -webkit-border-radius: 100px;
@@ -110,7 +113,7 @@ body{
 
 .cloud:after{
     width: 120px; height: 120px;
-    top: -55px; left: auto; right: 15px;
+    top: -55px; left: auto; right: 5px;
 }
 .x1{
     -webkit-animation: moveclouds 15s linear infinite;
