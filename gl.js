@@ -1,5 +1,4 @@
 // t is current array
-<<<<<<< HEAD
 var t;
 // time is timerID
 var time;
@@ -9,22 +8,10 @@ var pop = 0;
 var gen = 1;
 //popm string for population and generation
 var popm = "Population: " + pop + " Generation: " + gen;
-=======
-    var t;
-    // time is timerID
-    var time;
-    // pop is current population
-    var pop = 0;
-    // gen is current generation
-    var gen = 0;
-    //popm string for population and generation
-    var popm = "Population: " + pop + " Generation: " + gen;
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
 function createTable() {
     // rl is row length, cl is column length
     var rl = document.forms.game.row.value;
     var cl = document.forms.game.col.value;
-<<<<<<< HEAD
     // verify inputs
    if (isNaN(rl) || isNaN(cl))
    {
@@ -32,8 +19,6 @@ function createTable() {
       col.focus();
       col.select();
    }
-=======
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
     // reset the population and generation
     pop = 0;
     gen = 0;
@@ -52,23 +37,14 @@ function createTable() {
     //create html labels
     var table = document.createElement('table');
     table.style.border = "2px solid black";
-<<<<<<< HEAD
     table.style.bgcolor = "grey";
-=======
-    table.style.bgcolor="grey";
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
     var baseRow = document.createElement('tr');
     var baseCell = document.createElement('td');
 
     //change the size of the cells based on squarecell class in css
     baseCell.className = "squarecell";
-<<<<<<< HEAD
     baseRow.className = "squarecell";
     table.className = "mytable";
-=======
-    baseRow.className="squarecell";
-    table.className="mytable";
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
     // container is the form
     var container = document.getElementById('container');
     // iterate through current array
@@ -81,7 +57,6 @@ function createTable() {
             //set the value of the cell to be the value of the array
             myCell.innerHTML = t[i][j];
             //add click event
-<<<<<<< HEAD
             myCell.setAttribute("onclick", "toggleCellDeadOrAlive(this," + i + "," + j + ")");
             //Append new cell
             myRow.appendChild(myCell);
@@ -89,15 +64,6 @@ function createTable() {
             if (t[i][j] == 1) {
                 myCell.style.backgroundColor = "blue";
                 myCell.style.color = "blue";
-=======
-            myCell.setAttribute("onclick", "toggleCellDeadOrAlive(this,"+i+","+j+")");
-            //Append new cell
-            myRow.appendChild(myCell);
-            // if cell value is 1, background is black, else white
-            if (t[i][j] == 1){
-                myCell.style.backgroundColor = "blue";
-                myCell.style.color="blue";
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
                 pop++;
             }
             else {
@@ -117,30 +83,18 @@ function createTable() {
 
     // change the text in the label
     popm = "Population: " + pop + " Generation: " + gen;
-<<<<<<< HEAD
     document.getElementById("lives").innerHTML = popm;
-=======
-    document.getElementById("lives").innerHTML = popm; 
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
 
 }
 // start the increment automatically by calling next() constantly
 function start() {
-<<<<<<< HEAD
     if (time)
         return;
-=======
-    if(time) return;
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
     time = setInterval(next, 2000);
     next();
 }
 // stop the increments
-<<<<<<< HEAD
 function stop() {
-=======
-function stop(){
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
     clearInterval(time);
     time = null;
 }
@@ -148,144 +102,14 @@ function stop(){
 function reset() {
     createTable();
     gen = 0;
-<<<<<<< HEAD
 }
 function next23() {
     // increment the generation forward 23
     gen += 23;
-=======
-}
-function next23(){
-    // increment the generation forward 23
-    gen += 23;
     // rl is row length user typed in text box
     var rl = document.forms.game.row.value;
     // cl is column length user typed in text box
     var cl = document.forms.game.col.value;
-    // reset population to be zero
-    pop = 0;
-    // clear the form
-    document.getElementById("container").innerHTML = "";
-    // alive_count is for number of alive cells
-    var alive_count;
-    for (var y = 0; y < 23; y++) {
-        //create new temp array
-        var n = new Array(rl);
-        for (var i = 0; i < rl; i++) {
-            n[i] = new Array(cl);
-        }
-        for (var i = 0; i < rl; i++) {
-            for (var j = 0; j < cl; j++) {
-                n[i][j] = 0;
-            }
-        }
-        //determine the contents of new array
-        for (var i = 0; i < rl; i++) {
-            for (var j = 0; j < cl; j++) {
-                alive_count = 0;
-                // left top alive
-                if (i - 1 >= 0 && j - 1 >= 0)
-                    if (t[i - 1][j - 1] == 1)
-                        alive_count++;
-                // top alive
-                if (i - 1 >= 0)
-                    if (t[i - 1][j] == 1)
-                        alive_count++;
-                // right top alive
-
-                if (i - 1 >= 0 && j + 1 <= (cl - 1))
-                    if (t[i - 1][j + 1] == 1)
-                        alive_count++;
-                // left alive
-                if (j - 1 >= 0)
-                    if (t[i][j - 1] == 1)
-                        alive_count++;
-                // right alive
-                if (j + 1 <= (cl - 1))
-                    if (t[i][j + 1] == 1)
-                        alive_count++;
-                // bottom left alive
-                if (i + 1 <= (rl - 1) && j - 1 >= 0)
-                    if (t[i + 1][j - 1] == 1)
-                        alive_count++;
-                // bottom alive
-                if (i + 1 <= (rl - 1))
-                    if (t[i + 1][j] == 1)
-                        alive_count++;
-                // bottom right alive
-                if (i + 1 <= (rl - 1) && j + 1 <= (cl - 1))
-                    if (t[i + 1][j + 1] == 1)
-                        alive_count++;
-                // set up new array
-                if (t[i][j] == 1 && (alive_count < 2 || alive_count > 3))
-                    n[i][j] = 0;
-                else if (t[i][j] == 1 && (alive_count >= 2 || alive_count <= 3))
-                    n[i][j] = 1;
-                else if (t[i][j] == 0 && alive_count == 3)
-                    n[i][j] = 1;
-                else
-                    n[i][j] = t[i][j];
-
-            }
-
-        }
-        // update the current array with the new array
-        for (var i = 0; i < rl; i++) {
-            for (var j = 0; j < cl; j++) {
-                t[i][j] = n[i][j];
-            }
-        }
-    }
-    //create html labels
-    var table = document.createElement('table');
-    table.style.border = "2px solid black";
-    table.style.bgcolor="grey";
-    var baseRow = document.createElement('tr');
-    var baseCell = document.createElement('td');
-    //change the size of the cells based on squarecell class in css
-    baseCell.className = "squarecell";
-    table.className="mytable";
-    //container is the form
-    var container = document.getElementById('container');
-    //iterate through the new array 
-    for (var i = 0; i < rl; i++) {
-        //Create a new row
-        var myRow = baseRow.cloneNode(false);
-        for (var j = 0; j < cl; j++) {
-            //Create a new cell, you could loop this for multiple cells
-            var myCell = baseCell.cloneNode(false);
-            myCell.innerHTML = t[i][j];
-            
-
-            //Append new cell
-            myRow.appendChild(myCell);
-            // if cell value is 1, background is black, else white
-            if (t[i][j] == 1){
-                myCell.style.backgroundColor = "blue";
-                myCell.style.color="blue";
-                pop++;
-            }
-            else {
-                myCell.style.backgroundColor = "grey";
-                myCell.style.color = "grey";
-            }
-        }
-        //Append new row
-        table.appendChild(myRow);
-    }
-    // update the form to draw the table
-    container.appendChild(table);
-    // change the text in the label
-    popm = "Population: " + pop + " Generation: " + gen;
-    document.getElementById("lives").innerHTML = popm; 
-}
-function next(){
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
-    // rl is row length user typed in text box
-    var rl = document.forms.game.row.value;
-    // cl is column length user typed in text box
-    var cl = document.forms.game.col.value;
-<<<<<<< HEAD
     // verify inputs
     if (isNaN(rl) || isNaN(cl))
    {
@@ -295,17 +119,10 @@ function next(){
    }
     // reset population to be zero
     pop = 0;
-=======
-    // reset population to be zero
-    pop = 0;
-    // update generation
-    gen++;
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
     // clear the form
     document.getElementById("container").innerHTML = "";
     // alive_count is for number of alive cells
     var alive_count;
-<<<<<<< HEAD
     for (var y = 0; y < 23; y++) {
         //create new temp array
         var n = new Array(rl);
@@ -443,26 +260,14 @@ function next() {
     for (var i = 0; i < rl; i++) {
         n[i] = new Array(cl);
     }
-=======
-    //initialize new array
-    var n = new Array(rl);
-    for (var i = 0; i < rl; i++) {
-        n[i] = new Array(cl);
-    }
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
     for (var i = 0; i < rl; i++) {
         for (var j = 0; j < cl; j++) {
             n[i][j] = 0;
         }
     }
     //determine the contents of new array
-<<<<<<< HEAD
     for (var i = 0; i < rl; i++) {
         for (var j = 0; j < cl; j++) {
-=======
-    for(var i = 0; i < rl; i++){
-        for(var j = 0; j < cl; j++){
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
             alive_count = 0;
             // left top alive
             if (i - 1 >= 0 && j - 1 >= 0)
@@ -474,20 +279,14 @@ function next() {
                     alive_count++;
             // right top alive
 
-<<<<<<< HEAD
             if (i - 1 >= 0 && j + 1 <= (cl - 1))
                 if (t[i - 1][j + 1] == 1)
                     alive_count++;
-=======
-            if(i-1 >= 0 && j + 1 <= (cl-1))
-                if(t[i-1][j+1] == 1) alive_count++;
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
             // left alive
             if (j - 1 >= 0)
                 if (t[i][j - 1] == 1)
                     alive_count++;
             // right alive
-<<<<<<< HEAD
             if (j + 1 <= (cl - 1))
                 if (t[i][j + 1] == 1)
                     alive_count++;
@@ -503,19 +302,6 @@ function next() {
             if (i + 1 <= (rl - 1) && j + 1 <= (cl - 1))
                 if (t[i + 1][j + 1] == 1)
                     alive_count++;
-=======
-             if(j+1<=(cl-1))
-                if(t[i][j+1]==1) alive_count++;
-            // bottom left alive
-            if(i+1 <= (rl-1) && j - 1>=0)
-                if(t[i+1][j-1] == 1) alive_count++;
-            // bottom alive
-            if(i + 1 <= (rl-1))
-                if(t[i+1][j] == 1) alive_count++;
-            // bottom right alive
-            if(i+1 <= (rl-1) && j + 1<=(cl-1))
-                if(t[i+1][j+1] == 1) alive_count++;
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
             // set up new array
             if (t[i][j] == 1 && (alive_count < 2 || alive_count > 3))
                 n[i][j] = 0;
@@ -532,20 +318,12 @@ function next() {
     //create html labels
     var table = document.createElement('table');
     table.style.border = "2px solid black";
-<<<<<<< HEAD
     table.style.bgcolor = "grey";
-=======
-    table.style.bgcolor="grey";
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
     var baseRow = document.createElement('tr');
     var baseCell = document.createElement('td');
     //change the size of the cells based on squarecell class in css
     baseCell.className = "squarecell";
-<<<<<<< HEAD
     table.className = "mytable";
-=======
-    table.className="mytable";
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
     //container is the form
     var container = document.getElementById('container');
     //iterate through the new array 
@@ -556,25 +334,15 @@ function next() {
             //Create a new cell, you could loop this for multiple cells
             var myCell = baseCell.cloneNode(false);
             myCell.innerHTML = n[i][j];
-<<<<<<< HEAD
             //add click event
             myCell.setAttribute("onclick", "toggleCellDeadOrAlive(this," + i + "," + j + ")");
-=======
-            
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
 
             //Append new cell
             myRow.appendChild(myCell);
             // if cell value is 1, background is black, else white
-<<<<<<< HEAD
             if (n[i][j] == 1) {
                 myCell.style.backgroundColor = "blue";
                 myCell.style.color = "blue";
-=======
-            if (n[i][j] == 1){
-                myCell.style.backgroundColor = "blue";
-                myCell.style.color="blue";
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
                 pop++;
             }
             else {
@@ -597,11 +365,7 @@ function next() {
     }
     // change the text in the label
     popm = "Population: " + pop + " Generation: " + gen;
-<<<<<<< HEAD
     document.getElementById("lives").innerHTML = popm;
-=======
-    document.getElementById("lives").innerHTML = popm; 
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
 }
 // this is for mouse clicks
 function toggleCellDeadOrAlive(td, x, y) {
@@ -616,9 +380,5 @@ function toggleCellDeadOrAlive(td, x, y) {
         td.style.backgroundColor = "blue";
         td.style.color = "blue";
     }
-<<<<<<< HEAD
 }
 
-=======
-}
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60

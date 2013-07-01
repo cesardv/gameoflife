@@ -18,11 +18,7 @@ root {
 }
 .mytable{
     background-color:gray;
-<<<<<<< HEAD
     border-spacing: 1px;
-=======
-    border-spacing: 1;
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
 /*    border-collapse: collapse;*/
 }
 /*
@@ -90,11 +86,7 @@ body{
     z-index: -1;
 }
 .cloud{
-<<<<<<< HEAD
     width: 200px; height: 15px;
-=======
-    width: 200px; height: 60px;
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
     background: #fff;
     border-radius: 200px;
     -moz-border-radius: 200px;
@@ -118,11 +110,7 @@ body{
 
 .cloud:after{
     width: 120px; height: 120px;
-<<<<<<< HEAD
     top: -55px; left: auto; right: 15px;
-=======
-    position: -55px; left: auto; right: 15px;
->>>>>>> 87ae9a8605f9fb1744d800bc3d12122cad31ec60
 }
 .x1{
     -webkit-animation: moveclouds 15s linear infinite;
